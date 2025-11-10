@@ -35,3 +35,5 @@ private_tokens-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# ignore localstack.
+/localstack/
