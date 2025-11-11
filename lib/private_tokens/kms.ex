@@ -6,9 +6,15 @@ defmodule PrivateTokens.KMS do
 
   def encrypt_token(token) do
     plaintext = Base.encode64(token)
-    encrypt = ExAws.KMS.encrypt(kms_alias!(), plaintext)
+    encrypt_op = ExAws.KMS.encrypt(kms_alias!(), plaintext)
 
-    ExAws.request(encrypt)
+    ExAws.request(encrypt_op)
+  end
+
+  def decrypt_token(ciphertext) do
+    decrypt_op = ExAws.KMS.decrypt(ciphertext)
+
+    ExAws.request(decrypt_op)
   end
 
   def generate_token do
