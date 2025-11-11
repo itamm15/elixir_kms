@@ -37,3 +37,6 @@ npm-debug.log
 
 # ignore localstack.
 /localstack/
+
+# ignore envs.
+.envrc
